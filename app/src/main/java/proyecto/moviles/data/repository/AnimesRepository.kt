@@ -5,7 +5,7 @@ import proyecto.moviles.model.Animes
 
 class AnimesRepository {
     suspend fun getAnimes(): List<Animes> {
-        val response = RetrofitHelper.animesInstance.getAllPerson()
+        val response = RetrofitHelper.animesInstance.getAllAnime()
         return response.results
     }
 }

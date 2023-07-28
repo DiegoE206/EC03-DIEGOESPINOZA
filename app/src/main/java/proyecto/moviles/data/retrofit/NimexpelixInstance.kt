@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface NimexpelixInstance {
     @GET("api/character")
-    suspend fun getAllPerson(): AnimesListResponse
+    suspend fun getAllAnime(): AnimesListResponse
 }

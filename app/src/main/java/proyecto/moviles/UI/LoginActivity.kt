@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.password.editText?.text.toString()
 
             if (validateEmailPass(email, password)) {
-                val ventanamenu = Intent(this, MainActivity::class.java)
+                val ventanamenu = Intent(this, NavegacionActivity::class.java)
                 startActivity(ventanamenu)
                 Toast.makeText(this, "Ingreso al Menú", Toast.LENGTH_SHORT).show()
             } else {

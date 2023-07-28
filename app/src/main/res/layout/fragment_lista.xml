@@ -8,7 +8,7 @@
     android:background="@drawable/img5">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_lisrproduct"
+        android:id="@+id/rv_listanime"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

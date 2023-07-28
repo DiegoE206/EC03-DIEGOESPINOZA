@@ -10,12 +10,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import proyecto.moviles.databinding.FragmentListaBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-
 class ListaFragment : Fragment() {
     private lateinit var binding: FragmentListaBinding
     private lateinit var viewModel: ListaViewModel
@@ -37,10 +31,10 @@ class ListaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val adapter = RvAnimeAdapter(listOf())
-        binding.rvLisrproduct.adapter = adapter
-        binding.rvLisrproduct.layoutManager = GridLayoutManager(requireContext(), 2, RecyclerView.VERTICAL, false)
-        viewModel.animes.observe(requireActivity()) {persons ->
-            adapter.anime = persons
+        binding.rvListanime.adapter = adapter
+        binding.rvListanime.layoutManager = GridLayoutManager(requireContext(), 2, RecyclerView.VERTICAL, false)
+        viewModel.animes.observe(requireActivity()) {anim ->
+            adapter.anime = anim
             adapter.notifyDataSetChanged()
         }
 

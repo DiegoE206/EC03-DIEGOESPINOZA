@@ -27,11 +27,6 @@ class AnimeVH(private val binding: ItemAnimesBinding): RecyclerView.ViewHolder(b
         binding.txtTitulo.text = animex.titulo
         binding.txtGenero.text = animex.genero
         binding.txtFecha.text= animex.fechainicio
-        if (animex.infoimg.isNotEmpty()) {
-            binding.imgImage.load(animex.infoimg)
-        } else {
-            binding.imgImage.setImageResource(R.drawable.img7)
-        }
     }
 
 }

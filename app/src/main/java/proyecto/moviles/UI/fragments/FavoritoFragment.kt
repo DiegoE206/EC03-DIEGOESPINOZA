@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import proyecto.moviles.R
 import proyecto.moviles.databinding.FragmentFavoritoBinding
+import proyecto.moviles.model.getDataFavorite
 
 class FavoritoFragment : Fragment() {
     private lateinit var binding: FragmentFavoritoBinding
@@ -14,7 +17,14 @@ class FavoritoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding=FragmentFavoritoBinding.inflate(inflater, container, false)
+        // Inflate the layout for this fragment
+        binding = FragmentFavoritoBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.rvAnimefavorite.adapter = RvAnimeFav(getDataFavorite())
+        binding.rvAnimefavorite.layoutManager = GridLayoutManager(requireContext(), 1, RecyclerView.VERTICAL, false)
     }
 }
