@@ -1,8 +1,9 @@
 package proyecto.moviles.data.retrofit
 
+import proyecto.moviles.data.response.AnimesListResponse
 import retrofit2.http.GET
 
 interface NimexpelixInstance {
-    @GET("")
-    fun getAllAnimes()
+    @GET("api/character")
+    suspend fun getAllPerson(): AnimesListResponse
 }
